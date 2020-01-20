@@ -4,10 +4,10 @@ from django.contrib import admin
 from shuup.apps import AppConfig
 from shuup.apps.settings import validate_templates_configuration
 
-class ShopAdminAppConfig(AppConfig):
-    name = "shop.admin"
-    verbose_name = "Shop Admin"
-    label = "shop_admin"
+class ShopsAdminAppConfig(AppConfig):
+    name = "shops.admin"
+    verbose_name = "Shops Admin"
+    label = "shops_admin"
     required_installed_apps = ["bootstrap3"]
     provides = {
         "admin_module": [
@@ -107,4 +107,4 @@ class ShopAdminAppConfig(AppConfig):
         validate_templates_configuration()
 
 
-default_app_config = "shop.admin.ShopAdminAppConfig"
+default_app_config = "shop.admin.ShopsAdminAppConfig"

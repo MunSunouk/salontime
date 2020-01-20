@@ -22,11 +22,11 @@ urlpatterns = [
     # django default 
     url(r'^admin/', admin.site.urls),
     url('', include('frontend.urls')),
-    url('', include('shops.urls')),
+    url(r'^api/', include('shops.urls')),
     # from restframework for browsable api
     url(r'^api-auth/', include('rest_framework.urls')),
     # shuup
     url(r'^sa/', include('shuup.admin.urls', namespace="shuup_admin", app_name="shuup_admin")),
-    url(r'^api/', include('shuup_api.urls')),
+    # url(r'^api/', include('shuup_api.urls')),
     url(r'^', include('shuup.front.urls', namespace="shuup", app_name="shuup")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
